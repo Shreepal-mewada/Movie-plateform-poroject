@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000/api',
+    baseURL: 'https://movie-platform-backend-4gqb.onrender.com/api',
     timeout: 5000,
     withCredentials: true,
     headers: {
