@@ -16,6 +16,9 @@ const { apiLimiter } = require('./middleware/rateLimiter');
 
 const app = express();
 
+// Trust proxy for rate-limiting behind reverse proxies (Nginx, Cloudflare, etc.)
+app.set('trust proxy', 1);
+
 // Security Middleware
 app.use(helmet());
 
@@ -60,6 +63,14 @@ app.use(cookieParser());
 
 // Apply basic rate limiting to all requests
 app.use('/api/', apiLimiter);
+
+// Root Route
+app.get('/', (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: 'Movie Discovery Platform API is running...'
+    });
+});
 
 // Setup Routes
 app.use('/api/auth', authRoutes);
