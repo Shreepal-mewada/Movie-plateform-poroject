@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Plus, Bell, Filter, Download, Edit3, Trash2, ArrowUpRight } from 'lucide-react';
 import api from '../../services/api';
 import { useToast } from '../../context/ToastContext';
+import TrailerModal from '../../components/TrailerModal';
 
 const mockMovies = [
     { _id: '1', title: 'Interstellar', releaseDate: '2014-11-07', genre: ['SCI-FI', 'ADVENTURE'], tmdbId: 157338, posterUrl: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=50&q=80' },
