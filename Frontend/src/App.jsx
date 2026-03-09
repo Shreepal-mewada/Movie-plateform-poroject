@@ -4,6 +4,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
+import ServerWakeupBanner from './components/ServerWakeupBanner';
 
 // Lazy loading pages for better performance
 import Home from './pages/Home';
@@ -36,6 +37,7 @@ function App() {
         <div className="min-h-screen bg-netflix-dark text-white font-sans selection:bg-netflix-red selection:text-white pb-10">
             <ScrollToTop />
             <Navbar />
+            <ServerWakeupBanner />
             <Suspense fallback={<LoadingScreen />}>
                 <Routes>
                     {/* Public Routes */}

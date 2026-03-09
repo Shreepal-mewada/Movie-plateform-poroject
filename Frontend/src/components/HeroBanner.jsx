@@ -35,29 +35,29 @@ const HeroBanner = ({ movie, onWatchTrailer, onMoreInfo }) => {
                     {featureTag}
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 drop-shadow-2xl tracking-tighter leading-[0.9]">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 md:mb-6 drop-shadow-2xl tracking-tighter leading-[0.9]">
                     {title || "The Midnight Horizon"}
                 </h1>
 
-                <p className="text-base md:text-xl text-gray-200 mb-10 max-w-2xl drop-shadow-md line-clamp-3 leading-relaxed font-medium">
+                <p className="text-sm sm:text-base md:text-xl text-gray-200 mb-6 md:mb-10 max-w-2xl drop-shadow-md line-clamp-3 leading-relaxed font-medium">
                     {description || "A pulse-pounding thriller set in the neon-lit streets of 2049. A rogue operative uncovers a conspiracy that threatens to rewrite human history."}
                 </p>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3 md:gap-4">
                     <button
                         onClick={() => onWatchTrailer && onWatchTrailer(movie)}
-                        className="flex items-center gap-3 bg-netflix-red text-white px-8 py-3.5 rounded-md hover:bg-red-700 transition-all duration-300 font-bold shadow-xl active:scale-95"
+                        className="flex items-center gap-2 md:gap-3 bg-netflix-red text-white px-5 md:px-8 py-2.5 md:py-3.5 rounded-md hover:bg-red-700 transition-all duration-300 font-bold shadow-xl active:scale-95"
                     >
-                        <Play className="w-6 h-6 fill-current" />
-                        <span className="text-lg">Watch Trailer</span>
+                        <Play className="w-5 h-5 md:w-6 md:h-6 fill-current" />
+                        <span className="text-base md:text-lg">Watch Trailer</span>
                     </button>
 
                     <button
                         onClick={() => onMoreInfo && onMoreInfo(movie)}
-                        className="flex items-center gap-3 bg-netflix-gray/30 text-white px-8 py-3.5 rounded-md hover:bg-netflix-gray/50 transition-all duration-300 font-bold backdrop-blur-md border border-white/10 active:scale-95"
+                        className="flex items-center gap-2 md:gap-3 bg-netflix-gray/30 text-white px-5 md:px-8 py-2.5 md:py-3.5 rounded-md hover:bg-netflix-gray/50 transition-all duration-300 font-bold backdrop-blur-md border border-white/10 active:scale-95"
                     >
-                        <Info className="w-6 h-6" />
-                        <span className="text-lg">More Info</span>
+                        <Info className="w-5 h-5 md:w-6 md:h-6" />
+                        <span className="text-base md:text-lg">More Info</span>
                     </button>
                 </div>
             </div>

@@ -12,11 +12,6 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Hide navbar on admin routes
-    if (location.pathname.startsWith('/admin')) {
-        return null;
-    }
-
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
@@ -49,6 +44,10 @@ const Navbar = () => {
         }
     };
 
+    if (location.pathname.startsWith('/admin')) {
+        return null;
+    }
+
     return (
         <nav
             className={`fixed w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-netflix-dark shadow-md' : 'bg-gradient-to-b from-black/80 to-transparent'
@@ -57,9 +56,9 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo and Desktop Links */}
-                    <div className="flex items-center gap-15">
-                        <Link to="/" className="flex items-center gap-2 text-white font-black text-xl tracking-tighter uppercase">
-                            <div className="w-12 h-12 rounded-full bg-transparent p-1.5 flex items-center justify-center overflow-hidden">
+                    <div className="flex items-center gap-4 md:gap-15">
+                        <Link to="/" className="flex items-center gap-1.5 md:gap-2 text-white font-black text-lg md:text-xl tracking-tighter uppercase">
+                            <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-transparent p-1 flex items-center justify-center overflow-hidden">
                                 <img
                                     src="https://static.thenounproject.com/png/77640-200.png"
                                     alt="Logo"
